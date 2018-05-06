@@ -7,8 +7,11 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-row class="center">
+      <button ion-button (click)="getPicture(0)">Show Album</button>  
+  </ion-row>
+  <ion-card>
+    <img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+    <button ion-button (click)="upload()" *ngIf="captureDataUrl">Upload to Firebase!</button>
+  </ion-card>
 </ion-content>
